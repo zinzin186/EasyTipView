@@ -204,9 +204,9 @@ class ViewController: UIViewController, EasyTipViewDelegate {
             preferences.positioning.contentVInset = 5
             
             let contentView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 82))
-            contentView.image = UIImage(named: "easytipview")
+//            contentView.image = UIImage(named: "easytipview")
             EasyTipView.show(forView: self.buttonG,
-                             contentView: contentView,
+                             text: "Tip view within the topmost window. Tap to dismiss.",
                              preferences: preferences)
 
         default:

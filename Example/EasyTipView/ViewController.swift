@@ -194,7 +194,7 @@ class ViewController: UIViewController, EasyTipViewDelegate {
             preferences.drawing.backgroundColor = buttonG.backgroundColor!
 
             preferences.animating.dismissTransform = CGAffineTransform(translationX: 0, y: -15)
-            preferences.animating.showInitialTransform = CGAffineTransform(translationX: 0, y: 15)
+            preferences.animating.showInitialTransform = CGAffineTransform(translationX: 0, y: 25)
             preferences.animating.showInitialAlpha = 0
             preferences.animating.showDuration = 1
             preferences.animating.dismissDuration = 1

@@ -217,6 +217,7 @@ open class EasyTipView: UIView {
             public var foregroundColor     = UIColor.white
             public var backgroundColor     = UIColor.red
             public var arrowPosition       = ArrowPosition.any
+            public var padding             = CGFloat(16)
             public var textAlignment       = NSTextAlignment.center
             public var borderWidth         = CGFloat(0)
             public var borderColor         = UIColor.clear
@@ -449,7 +450,10 @@ open class EasyTipView: UIView {
         
         var position = preferences.drawing.arrowPosition
         
-        let refViewFrame = presentingView!.convert(presentingView!.bounds, to: superview);
+        var refViewFrame = presentingView!.convert(presentingView!.bounds, to: superview);
+        if position == .bottom {
+            refViewFrame.origin.y -= preferences.drawing.padding
+        }
         
         let superviewFrame: CGRect
         if let scrollview = superview as? UIScrollView {

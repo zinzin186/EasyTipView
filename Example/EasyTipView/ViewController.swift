@@ -42,19 +42,22 @@ class ViewController: UIViewController, EasyTipViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismis)))
         
-        self.configureUI()
-        
-        var preferences = EasyTipView.Preferences()
-        
-        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 13)!
-        preferences.drawing.foregroundColor = UIColor.white
-        preferences.drawing.backgroundColor = UIColor(hue:0.46, saturation:0.99, brightness:0.6, alpha:1)
-        
-        EasyTipView.globalPreferences = preferences
-        self.view.backgroundColor = UIColor(hue:0.75, saturation:0.01, brightness:0.96, alpha:1.00)
+//        self.configureUI()
+//        
+//        var preferences = EasyTipView.Preferences()
+//        
+//        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 13)!
+//        preferences.drawing.foregroundColor = UIColor.white
+//        preferences.drawing.backgroundColor = UIColor(hue:0.46, saturation:0.99, brightness:0.6, alpha:1)
+//        
+//        EasyTipView.globalPreferences = preferences
+//        self.view.backgroundColor = UIColor(hue:0.75, saturation:0.01, brightness:0.96, alpha:1.00)
     }
-    
+    @objc func dismis() {
+        tipView?.dismiss()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.toolbarItemAction()
@@ -200,8 +203,8 @@ class ViewController: UIViewController, EasyTipViewDelegate {
             preferences.animating.dismissDuration = 1
             preferences.drawing.arrowPosition = .bottom
             
-            preferences.positioning.contentHInset = 5
-            preferences.positioning.contentVInset = 5
+            preferences.positioning.contentHInset = 25
+            preferences.positioning.contentVInset = 25
             
             let contentView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 82))
 //            contentView.image = UIImage(named: "easytipview")
